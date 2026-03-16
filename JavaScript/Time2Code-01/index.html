@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Codar!</title>
+
+    <script>
+        // ex01
+        const car_name = "Fusca";
+
+        let userName, userAge;
+
+        // ex02 e ex03
+        function getInfo() {
+            userName = document.getElementById('nameInput').value;
+            userAge = prompt("Sua idade: ");
+
+            document.getElementById("getUserInfo").innerHTML = "Ver seus dados";
+        }
+
+        function showInfo() {
+            alert("Nome: " + userName + "\nIdade: " + userAge)
+        }
+
+        // ex04
+        function showShape() {
+            let shape = document.getElementById("shapeSelect")
+        }
+        
+    </script>
+</head>
+<body>
+    <h3>Ex 01 - Carro legal</h3>
+    <button onclick="alert(car_name)">Clica aqui pra ver</button>
+
+    
+    <h3>Ex 02 e 03 - Seu nome</h3>
+
+    <label for="nameInput">Nome:</label>
+    <input type="text" id="nameInput" placeholder="Informe seu nome...">
+    <button onclick="getInfo()">Enviar</button>
+    <button onclick="showInfo()" id="getUserInfo"></button>
+
+
+    <h3>Ex 04 - Calcular Áreas</h3>
+
+    <label>Escolha a forma:</label>
+    <label for="shapeSelect">Escolha a figura:</label>
+    <select id="shapeSelect" onchange="showShape()">
+        <option value="">Selecione...</option>
+        <option value="rectangle">Retângulo</option>
+        <option value="triangle">Triângulo</option>
+        <option value="circle">Círculo</option>
+    </select>
+    <br><br>
+
+    <div id="rectangle" style="display:none;">
+        <h3>Retângulo</h3>
+        <label for="rectangleBase">Base:</label>
+        <input type="number" id="rectangleBase"><br>
+        <label for="rectangleHeight">Altura:</label>
+        <input type="number" id="rectangleHeight"><br>
+        <button onclick="calculateRectangleArea()">Calcular</button>
+        <p id="rectangleResult"></p>
+    </div>
+
+    <div id="triangle" style="display:none;">
+        <h3>Triangle</h3>
+        <label for="triangleBase">Base:</label>
+        <input type="number" id="triangleBase"><br>
+        <label for="triangleHeight">Altura:</label>
+        <input type="number" id="triangleHeight"><br>
+        <button onclick="calculateTriangleArea()">Calcular</button>
+        <p id="triangleResult"></p>
+    </div>
+
+    <div id="circle" style="display:none;">
+        <h3>Circle</h3>
+        <label for="circleRadius">Raio:</label>
+        <input type="number" id="circleRadius"><br>
+        <button onclick="calculateCircleArea()">Calcular</button>
+        <p id="circleResult"></p>
+    </div>
+</body>
+</html>
