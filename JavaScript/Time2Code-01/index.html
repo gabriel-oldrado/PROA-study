@@ -25,16 +25,88 @@
 
         // ex04
         function showShape() {
-            let shape = document.getElementById("shapeSelect")
+            let shape = document.getElementById("shapeSelect").value;
+
+            document.getElementById("rectangle").style.display = "none";
+            document.getElementById("square").style.display = "none";
+            document.getElementById("diamond").style.display = "none";
+            document.getElementById("trapeze").style.display = "none";
+            document.getElementById("parallelogram").style.display = "none";
+            document.getElementById("triangle").style.display = "none";
+            document.getElementById("circle").style.display = "none";
+
+            if (shape === "rectangle") {
+                document.getElementById("rectangle").style.display = "block";
+            } else if (shape === "square") {
+                document.getElementById("square").style.display = "block";
+            } else if (shape === "diamond") {
+                document.getElementById("diamond").style.display = "block";
+            } else if (shape === "trapeze") {
+                document.getElementById("trapeze").style.display = "block";
+            } else if (shape === "parallelogram") {
+                document.getElementById("parallelogram").style.display = "block";
+            } else if (shape === "triangle") {
+                document.getElementById("triangle").style.display = "block";
+            } else if (shape === "circle") {
+                document.getElementById("circle").style.display = "block";
+            }
         }
-        
+
+        function calculateRectangleArea() {
+            let base = Number(document.getElementById("rectangleBase").value);
+            let height = Number(document.getElementById("rectangleHeight").value);
+            let area = base * height;
+            document.getElementById("rectangleResult").innerHTML = "Área: " + area;
+        }
+
+        function calculateSquareArea() {
+            let side = Number(document.getElementById("squareSide").value);
+            let area = side * side;
+            document.getElementById("squareResult").innerHTML = "Área: " + area;
+        }
+
+        function calculateDiamondArea() {
+            let D = Number(document.getElementById("biggerDiagonal").value);
+            let d = Number(document.getElementById("smallerDiagonal").value);
+            let area = (D * d) / 2;
+            document.getElementById("diamondResult").innerHTML = "Área: " + area;
+        }
+
+        function calculateTrapezeArea() {
+            let B = Number(document.getElementById("biggerBase").value);
+            let b = Number(document.getElementById("smallerBase").value);
+            let h = Number(document.getElementById("trapzeHeight").value);
+            let area = ((B + b) * h) / 2;
+            document.getElementById("trapezeResult").innerHTML = "Área: " + area;
+        }
+
+        function calculateParallelogramArea() {
+            let base = Number(document.getElementById("parallelogramBase").value);
+            let height = Number(document.getElementById("parallelogramHeight").value);
+            let area = base * height;
+            document.getElementById("parallelogramResult").innerHTML = "Área: " + area;
+        }
+
+        function calculateTriangleArea() {
+            let base = Number(document.getElementById("triangleBase").value);
+            let height = Number(document.getElementById("triangleHeight").value);
+            let area = (base * height) / 2;
+            document.getElementById("triangleResult").innerHTML = "Área: " + area;
+        }
+
+        function calculateCircleArea() {
+            let radius = Number(document.getElementById("circleRadius").value);
+            let area = Math.PI * radius * radius;
+            document.getElementById("circleResult").innerHTML = "Área: " + area.toFixed(2);
+        }
+                
     </script>
 </head>
 <body>
     <h3>Ex 01 - Carro legal</h3>
     <button onclick="alert(car_name)">Clica aqui pra ver</button>
 
-    
+
     <h3>Ex 02 e 03 - Seu nome</h3>
 
     <label for="nameInput">Nome:</label>
@@ -44,43 +116,88 @@
 
 
     <h3>Ex 04 - Calcular Áreas</h3>
+    <div>
+        <label>Escolha a forma:</label>
+        <label for="shapeSelect">Escolha a figura:</label>
+        <select id="shapeSelect" onchange="showShape()">
+            <option value="">Selecione...</option>
+            <option value="rectangle">Retângulo</option>
+            <option value="square">Quadrado</option>
+            <option value="diamond">Losango</option>
+            <option value="trapeze">Trapézio</option>
+            <option value="parallelogram">Paralelogramo</option>
+            <option value="triangle">Triângulo</option>
+            <option value="circle">Círculo</option>
+        </select>
 
-    <label>Escolha a forma:</label>
-    <label for="shapeSelect">Escolha a figura:</label>
-    <select id="shapeSelect" onchange="showShape()">
-        <option value="">Selecione...</option>
-        <option value="rectangle">Retângulo</option>
-        <option value="triangle">Triângulo</option>
-        <option value="circle">Círculo</option>
-    </select>
-    <br><br>
+        <div id="rectangle" style="display: none;">
+            <h4>Retângulo</h4>
+            <label for="rectangleBase">Base:</label>
+            <input type="number" id="rectangleBase"><br>
+            <label for="rectangleHeight">Altura:</label>
+            <input type="number" id="rectangleHeight"><br>
+            <button onclick="calculateRectangleArea()">Calcular</button>
+            <p id="rectangleResult"></p>
+        </div>
 
-    <div id="rectangle" style="display:none;">
-        <h3>Retângulo</h3>
-        <label for="rectangleBase">Base:</label>
-        <input type="number" id="rectangleBase"><br>
-        <label for="rectangleHeight">Altura:</label>
-        <input type="number" id="rectangleHeight"><br>
-        <button onclick="calculateRectangleArea()">Calcular</button>
-        <p id="rectangleResult"></p>
-    </div>
+        <div id="square" style="display: none;">
+            <h4>Quadrado</h4>
+            <label for="squareSide">Lado:</label>
+            <input type="number" id="squareSide"><br>
+            <button onclick="calculateSquareArea()">Calcular</button>
+            <p id="squareResult"></p>
+        </div>
 
-    <div id="triangle" style="display:none;">
-        <h3>Triangle</h3>
-        <label for="triangleBase">Base:</label>
-        <input type="number" id="triangleBase"><br>
-        <label for="triangleHeight">Altura:</label>
-        <input type="number" id="triangleHeight"><br>
-        <button onclick="calculateTriangleArea()">Calcular</button>
-        <p id="triangleResult"></p>
-    </div>
+        <div id="diamond" style="display: none;">
+            <h4>Losango</h4>
+            <label for="biggerDiagonal">Diagonal Maior:</label>
+            <input type="number" id="biggerDiagonal"><br>
+            <label for="smallerDiagonal">Diagonal Menor:</label>
+            <input type="number" id="smallerDiagonal"><br>
+            <button onclick="calculateDiamondArea()">Calcular</button>
+            <p id="diamondResult"></p>
+        </div>
 
-    <div id="circle" style="display:none;">
-        <h3>Circle</h3>
-        <label for="circleRadius">Raio:</label>
-        <input type="number" id="circleRadius"><br>
-        <button onclick="calculateCircleArea()">Calcular</button>
-        <p id="circleResult"></p>
+        <div id="trapeze" style="display: none;">
+            <h4>Trapézio</h4>
+            <label for="biggerBase">Base Maior:</label>
+            <input type="number" id="biggerBase"><br>
+            <label for="smallerBase">Base Menor:</label>
+            <input type="number" id="smallerBase"><br>
+            <label for="trapzeHeight">Altura:</label>
+            <input type="number" id="trapzeHeight"><br>
+            <button onclick="calculateTrapezeArea()">Calcular</button>
+            <p id="trapezeResult"></p>
+        </div>
+
+        <div id="parallelogram" style="display: none;">
+            <h4>Paralelogramo</h4>
+            <label for="parallelogramBase">Base:</label>
+            <input type="number" id="parallelogramBase"><br>
+            <label for="parallelogramHeight">Altura:</label>
+            <input type="number" id="parallelogramHeight"><br>
+            <button onclick="calculateParallelogramArea()">Calcular</button>
+            <p id="parallelogramResult"></p>
+        </div>
+
+        <div id="triangle" style="display: none;">
+            <h4>Triangle</h4>
+            <label for="triangleBase">Base:</label>
+            <input type="number" id="triangleBase"><br>
+            <label for="triangleHeight">Altura:</label>
+            <input type="number" id="triangleHeight"><br>
+            <button onclick="calculateTriangleArea()">Calcular</button>
+            <p id="triangleResult"></p>
+        </div>
+
+        <div id="circle" style="display: none;">
+            <h4>Circle</h4>
+            <label for="circleRadius">Raio:</label>
+            <input type="number" id="circleRadius"><br>
+            <button onclick="calculateCircleArea()">Calcular</button>
+            <p id="circleResult"></p>
+        </div>
+
     </div>
 </body>
 </html>
