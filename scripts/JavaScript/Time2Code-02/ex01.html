@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Codar 2 - Ex01</title>
+</head>
+<body>
+    <!-- 1. Escreva um programa em que o usuário informe dois números. Então escreva em tela o maior deles.  -->
+
+    <h2>Maior Número</h2>
+    
+    <label for="">Primeiro Nº: </label>
+    <input type="number" id="firstNumber"> <br>
+
+    <label for="">Segundo Nº: </label>
+    <input type="number" id="secNumber"> <br>
+
+    <button onclick="checkGreater()">Verificar</button>
+
+    <script>
+        function checkGreater() {
+            let n1 = Number(document.getElementById("firstNumber").value);
+            let n2 = Number(document.getElementById("secNumber").value);
+            let resultText;
+
+            if (n1 > n2) {
+                resultText = "O maior é " + n1;
+            } else if (n2 > n1) {
+                resultText = "O maior é " + n2;
+            } else {
+                resultText = "Os números são iguais."
+            }
+
+            alert(resultText);
+        }
+    </script>
+
+</body>
+</html>

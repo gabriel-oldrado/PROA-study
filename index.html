@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROA - Atividades</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Atividades do Proa</h1>
+    <p class="sub">Desenvolvimento Web · EQUIPE 5 - Java 1/2026</p>
+
+    <h2>JavaScript</h2>
+
+    <!-- pra num perder dnv essa bomba: › -->
+
+    <div class="accordion">
+        <div class="item">
+            <button class="item-header">
+                Hora de Codar!
+                <span class="arrow">›</span>
+            </button>
+            <ul class="item-body" id="hdc1-list"></ul>
+        </div>
+
+        <div class="item">
+            <button class="item-header">
+                Hora de Codar 2: A vingança do Coder!
+                <span class="arrow">›</span>
+            </button>
+            <ul class="item-body" id="hdc2-list"></ul>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="modal">
+            <button class="modal-close" id="modal-close">x</button>
+            <h3 id="modal-title"></h3>
+            <p id="modal-desc"></p>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer><a href="https://github.com/gaab-sec" class="footer-link">github.com/gaab-sec</a></footer>
+
+    <script type="module" src="scripts/script.js"></script>
+</body>
+</html>
