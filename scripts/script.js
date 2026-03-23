@@ -1,29 +1,45 @@
 import { exercisesHdc1 } from "./JavaScript/Time2Code-01/exercises.js";
 import { exercisesHdc2 } from "./JavaScript/Time2Code-02/exercises.js";
 
-const hdc1List = document.getElementById("hdc1-list");
-const hdc2List = document.getElementById("hdc2-list");
+const courseModules = [
+    {htmlId: "hdc1List", data: exercisesHdc1},
+    {htmlId: "hdc2List", data: exercisesHdc2},
+];
 
-exercisesHdc1.forEach(exercise => {
-    const itemList = document.createElement("li");
-    itemList.innerHTML = `
-    <button data-id="${exercise.id}">
-        Exercício ${exercise.id}
-        <span class="ex-desc">- ${exercise.desc}</span>
-    </button>
-    `;
-    hdc1List.appendChild(itemList);
-});
+courseModules.forEach(module => {
+    const listElement = document.getElementById(module.htmlId);
 
-exercisesHdc2.forEach(exercise => {
-    const itemList = document.createElement("li");
-    itemList.innerHTML = `
-    <button data-id="${exercise.id}">
-        Exercício ${exercise.id}
-        <span class="ex-desc">- ${exercise.desc}</span>
-    </button>
-    `;
-    hdc2List.appendChild(itemList);
+    if (!listElement) return;
+
+    module.data.forEach(exercise => {
+        const itemList = document.createElement("li");
+        itemList.innerHTML = `
+        <button data-id="${exercise.id}">
+            Exercício ${exercise.id}
+            <span class="ex-desc">- ${exercise.desc}</span>
+        </button>
+        `;
+        listElement.appendChild(itemList);
+    });
+
+    listElement.addEventListener("click", (event) => {
+        const btnClicked = event.target.closest("button[data-id]");
+        if (!btnClicked) return;
+
+        const exerciseId = Number(btnClicked.dataset.id);
+        
+        const choosenEx = module.data.find(ex => ex.id === exerciseId);
+        if (!choosenEx) return;
+
+        document.getElementById("modal-title").textContent = `Ex ${choosenEx.id} — ${choosenEx.title}`;
+        document.getElementById("modal-desc").textContent = choosenEx.desc;
+        document.getElementById("modal-body").innerHTML = choosenEx.html;
+
+        choosenEx.init();
+
+        document.getElementById("overlay").classList.add("active");
+
+    });
 });
 
 // ---
@@ -34,24 +50,6 @@ btnAccordion.forEach(btnAc => {
         btnAc.parentElement.classList.toggle("open");
     });
 });
-
-// ---
-hdc1List.addEventListener("click", (event) => {
-    const btnClicked = event.target.closest("button[data-id]");
-    if (!btnClicked) return;
-
-    const exerciseId = Number(btnClicked.dataset.id);
-    const choosenEx = exercisesHdc1.find(ex => ex.id === exerciseId);
-    if (!choosenEx) return;
-
-    document.getElementById("modal-title").textContent = `Ex ${choosenEx.id} — ${choosenEx.title}`;
-    document.getElementById("modal-desc").textContent = choosenEx.desc;
-    document.getElementById("modal-body").innerHTML = choosenEx.html;
-
-    choosenEx.init();
-
-    document.getElementById("overlay").classList.add("active");
-})
 
 function closeModal() {
     document.getElementById("overlay").classList.remove("active");
