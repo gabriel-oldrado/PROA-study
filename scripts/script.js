@@ -1,6 +1,8 @@
-import { exercisesHdc1 } from "./JavaScript/Time2Code-01/exercicios.js";
+import { exercisesHdc1 } from "./JavaScript/Time2Code-01/exercises.js";
+import { exercisesHdc2 } from "./JavaScript/Time2Code-02/exercises.js";
 
 const hdc1List = document.getElementById("hdc1-list");
+const hdc2List = document.getElementById("hdc2-list");
 
 exercisesHdc1.forEach(exercise => {
     const itemList = document.createElement("li");
@@ -11,6 +13,17 @@ exercisesHdc1.forEach(exercise => {
     </button>
     `;
     hdc1List.appendChild(itemList);
+});
+
+exercisesHdc2.forEach(exercise => {
+    const itemList = document.createElement("li");
+    itemList.innerHTML = `
+    <button data-id="${exercise.id}">
+        Exercício ${exercise.id}
+        <span class="ex-desc">- ${exercise.desc}</span>
+    </button>
+    `;
+    hdc2List.appendChild(itemList);
 });
 
 // ---
