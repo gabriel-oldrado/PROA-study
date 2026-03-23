@@ -2,8 +2,8 @@ import { exercisesHdc1 } from "./JavaScript/Time2Code-01/exercises.js";
 import { exercisesHdc2 } from "./JavaScript/Time2Code-02/exercises.js";
 
 const courseModules = [
-    {htmlId: "hdc1List", data: exercisesHdc1},
-    {htmlId: "hdc2List", data: exercisesHdc2},
+    {htmlId: "hdc1-list", data: exercisesHdc1},
+    {htmlId: "hdc2-list", data: exercisesHdc2},
 ];
 
 courseModules.forEach(module => {
