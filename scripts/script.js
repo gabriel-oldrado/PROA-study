@@ -1,5 +1,6 @@
-import { exercisesHdc1 } from "../JavaScript/Time2Code/hdc1.js";
-import { exercisesHdc2 } from "../JavaScript/Time2Code/hdc2.js";
+import { exercisesHdc1 } from "../atividades/JavaScript/Time2Code/hdc1.js";
+import { exercisesHdc2 } from "../atividades/JavaScript/Time2Code/hdc2.js";
+import { exercisesHdc3 } from "../atividades/JavaScript/Time2Code/hdc3.js";
 
 const courseModules = [
     {htmlId: "hdc1-list", data: exercisesHdc1},
