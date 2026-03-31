@@ -269,5 +269,201 @@ export const exercisesHdc2 = [
                 document.getElementById("result").innerHTML = "Valores: " + values.join(", ") + "<br>Soma: " + sum;
             }
         }
+    },
+
+    {
+        id: 8,
+        title: "Média Condicional",
+        desc: "Escreva um programa que calcule a média de 4 valores, digitados pelo usuário, somente se os valores estiverem no intervalo >0 - < 10. Se a média for > 5 escreva 'Você passou no teste', senão 'tente novamente'.",
+
+        html:`
+            <div class="field">
+                <label>1º Valor:</label>
+                <input type="number" id="v1">
+            </div>
+            <div class="field">
+                <label>2º Valor:</label>
+                <input type="number" id="v2">
+            </div>
+            <div class="field">
+                <label>3º Valor:</label>
+                <input type="number" id="v3">
+            </div>
+            <div class="field">
+                <label>4º Valor:</label>
+                <input type="number" id="v4">
+            </div>
+            <button id="btn">Ver Resultado</button>
+            <p class="result" id="result"></p>
+        `,
+
+        init: function() {
+            document.getElementById("btn").onclick = () => {
+                const values = [
+                    Number(document.getElementById("v1").value),
+                    Number(document.getElementById("v2").value),
+                    Number(document.getElementById("v3").value),
+                    Number(document.getElementById("v4").value)
+                ];
+
+                const checkNums = values.every(v => v > 0 && v < 10);
+
+                if (checkNums) {
+                    let sum = 0;
+                    for (let i = 0; i < values.length; i++) { sum += values[i] };
+                    const media = sum / 4;
+
+                    if (media > 5) {
+                        document.getElementById("result").innerHTML = "Média: " + media.toFixed(2) + "<br>Você passou no teste";
+                    } else {
+                        document.getElementById("result").innerHTML = "Média: " + media.toFixed(2) + "<br>tente novamente";
+                    }
+                } else {
+                    document.getElementById("result").innerHTML = "Por favor, insira valores entre 0 e 10.";
+                }
+            }
+        }
+    },
+
+    {
+        id: 9,
+        title: "Pode Votar?",
+        desc: "Escreva um programa para ler o ano de nascimento de uma pessoa e escrever uma mensagem que diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que ela nasceu).",
+
+        html:`
+            <div class="field">
+                <label>Ano de nascimento:</label>
+                <input type="number" id="birthYear" placeholder="Ano em que nasceu...">
+            </div>
+            <button id="btn">Ver Resultado</button>
+            <p class="result" id="result"></p>
+        `,
+
+        init: function() {
+            document.getElementById("btn").onclick = () => {
+                const currentDate = new Date();
+                const currentYear = currentDate.getFullYear();
+                const birthYear = Number(document.getElementById("birthYear").value);
+
+                if ( currentYear - birthYear >= 16 ) {
+                    document.getElementById("result").innerHTML = "Você tem idade para votar!";
+                } else {
+                    document.getElementById("result").innerHTML = "Você ainda não tem idade para votar!";
+                }
+            }
+        }
+    },
+
+    {
+        id: 10,
+        title: "Peso ideal",
+        desc: "Tendo como entrada a altura e o gênero designado ao nascer (1: feminino - 2: masculino) construa um programa que calcule seu peso ideal de acordo com as fórmulas: ",
+
+        html:`
+            <div class="modal-img">
+                <img src="JavaScript/Time2Code/assets/calc.png" alt="Fórmulas para calcular o peso ideal." style="max-width: 100%; border-radius: 8px;">
+            </div>
+            <br>
+
+            <div class="field">
+                <label>Sua altura (cm):</label>
+                <input type="number" id="userHeight" placeholder="ex: 175">
+            </div>
+
+            <div class="inline-group">
+                <div class="field" style="margin-bottom: 0; width: 100%;">
+                    <label>Gênero:</label>
+                    <select id="userGender">
+                        <option value="1">1: Feminino</option>
+                        <option value="2">2: Masculino</option>
+                    </select>
+                </div>
+                <button id="btn">Ver Resultado</button>
+            </div>
+            
+            <p class="result" id="result"></p>
+        `,
+
+        init: function() {
+            document.getElementById("btn").onclick = () => {
+                const heightCm = Number(document.getElementById("userHeight").value);
+                const gender = document.getElementById("userGender").value;
+
+                if (!heightCm || heightCm <= 0) {
+                    document.getElementById("result").textContent = "Por favor, digite uma altura válida.";
+                    return;
+                }
+
+                const heightM = heightCm / 100;
+                let idealWeight;
+
+                if (gender === "2") {
+                    idealWeight = (72.7 * heightM) - 58;
+                } else {
+                    idealWeight = (62.1 * heightM) - 44.7;
+                }
+
+                document.getElementById("result").innerHTML = "Seu peso ideal é: " + idealWeight.toFixed(2) + " kg";
+            }
+        }
+    },
+
+    {
+        id: 11,
+        title: "Micro Calculadora",
+        desc: "Escreva um programa para ler 2 valores inteiros informados pelo usuário e uma operação (1. Adição, 2. Subtração, 3. Divisão, 4. Multiplicação) para calcular e escrever o resultado.",
+
+        html:`
+            <div class="field">
+                <label>1º Valor Inteiro:</label>
+                <input type="number" id="v1" placeholder="Ex: 10">
+            </div>
+            <div class="field">
+                <label>2º Valor Inteiro:</label>
+                <input type="number" id="v2" placeholder="Ex: 5">
+            </div>
+            <div class="field">
+                <label>Operação:</label>
+                <select id="op">
+                    <option value="1">1: Adição (+)</option>
+                    <option value="2">2: Subtração (-)</option>
+                    <option value="3">3: Divisão (/)</option>
+                    <option value="4">4: Multiplicação (*)</option>
+                </select>
+            </div>
+            <button id="btn">Calcular</button>
+            <p class="result" id="result"></p>
+        `,
+
+        init: function() {
+            document.getElementById("btn").onclick = () => {
+                const v1 = parseInt(document.getElementById("v1").value);
+                const v2 = parseInt(document.getElementById("v2").value);
+                const op = document.getElementById("op").value;
+
+                if (isNaN(v1) || isNaN(v2)) {
+                    document.getElementById("result").textContent = "Por favor, preencha os dois valores com números válidos.";
+                    return;
+                }
+
+                let calcResult;
+
+                if (op === "1") {
+                    calcResult = v1 + v2;
+                } else if (op === "2") {
+                    calcResult = v1 - v2;
+                } else if (op === "3") {
+                    if (v2 === 0) {
+                        document.getElementById("result").innerHTML = "Erro: Divisão por zero não é permitida.";
+                        return;
+                    }
+                    calcResult = v1 / v2;
+                } else if (op === "4") {
+                    calcResult = v1 * v2;
+                }
+
+                document.getElementById("result").innerHTML = "O resultado é: <strong>" + calcResult + "</strong>";
+            }
+        }
     }
 ];

@@ -178,6 +178,21 @@ button.item-header {
     font-size: .95rem;
 }
 
+.field select {
+    padding: .4rem .6rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: .95rem;
+}
+
+.result {
+    margin-top: .75rem;
+    font-size: .95rem;
+    font-weight: 600;
+    color: #222;
+    min-height: 1.2rem;
+}
+
 #modal-body button {
     margin-top: .5rem;
     padding: .45rem 1.1rem;
@@ -189,14 +204,16 @@ button.item-header {
     cursor: pointer;
 }
 
-#modal-body button:hover {
-    background: #3d3d3d;
+.inline-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 1rem;
 }
 
-.result {
-    margin-top: .75rem;
-    font-size: .95rem;
-    font-weight: 600;
-    color: #222;
-    min-height: 1.2rem;
+.inline-group button {
+    margin: 0;
+    height: 38px;
+    white-space: nowrap;
+    padding: 0 1.2rem;
 }

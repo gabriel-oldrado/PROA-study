@@ -1,5 +1,5 @@
-import { exercisesHdc1 } from "./JavaScript/Time2Code-01/exercises.js";
-import { exercisesHdc2 } from "./JavaScript/Time2Code-02/exercises.js";
+import { exercisesHdc1 } from "../JavaScript/Time2Code/hdc1.js";
+import { exercisesHdc2 } from "../JavaScript/Time2Code/hdc2.js";
 
 const courseModules = [
     {htmlId: "hdc1-list", data: exercisesHdc1},
@@ -42,7 +42,7 @@ courseModules.forEach(module => {
     });
 });
 
-// ---
+
 const btnAccordion = document.querySelectorAll(".item-header");
 
 btnAccordion.forEach(btnAc => {
