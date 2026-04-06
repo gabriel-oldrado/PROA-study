@@ -5,6 +5,7 @@ import { exercisesHdc3 } from "../atividades/JavaScript/Time2Code/hdc3.js";
 const courseModules = [
     {htmlId: "hdc1-list", data: exercisesHdc1},
     {htmlId: "hdc2-list", data: exercisesHdc2},
+    {htmlId: "hdc3-list", data: exercisesHdc3}
 ];
 
 courseModules.forEach(module => {
