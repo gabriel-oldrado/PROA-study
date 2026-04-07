@@ -131,6 +131,8 @@ button.item-header {
     max-width: 440px;
     margin: 1rem;
     position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .modal-close {
