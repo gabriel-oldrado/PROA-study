@@ -1,11 +1,13 @@
 import { exercisesHdc1 } from "../atividades/JavaScript/Time2Code/hdc1.js";
 import { exercisesHdc2 } from "../atividades/JavaScript/Time2Code/hdc2.js";
 import { exercisesHdc3 } from "../atividades/JavaScript/Time2Code/hdc3.js";
+import { exercisesHdc4 } from "../atividades/JavaScript/Time2Code/hdc4.js";
 
 const courseModules = [
     {htmlId: "hdc1-list", data: exercisesHdc1},
     {htmlId: "hdc2-list", data: exercisesHdc2},
-    {htmlId: "hdc3-list", data: exercisesHdc3}
+    {htmlId: "hdc3-list", data: exercisesHdc3},
+    {htmlId: "hdc4-list", data: exercisesHdc4},
 ];
 
 courseModules.forEach(module => {
