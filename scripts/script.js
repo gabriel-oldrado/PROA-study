@@ -2,12 +2,14 @@ import { exercisesHdc1 } from "../atividades/JavaScript/Time2Code/hdc1.js";
 import { exercisesHdc2 } from "../atividades/JavaScript/Time2Code/hdc2.js";
 import { exercisesHdc3 } from "../atividades/JavaScript/Time2Code/hdc3.js";
 import { exercisesHdc4 } from "../atividades/JavaScript/Time2Code/hdc4.js";
+import { exercisesHdc5 } from "../atividades/JavaScript/Time2Code/hdc5/hdc5.js";
 
 const courseModules = [
     {htmlId: "hdc1-list", data: exercisesHdc1},
     {htmlId: "hdc2-list", data: exercisesHdc2},
     {htmlId: "hdc3-list", data: exercisesHdc3},
     {htmlId: "hdc4-list", data: exercisesHdc4},
+    {htmlId: "hdc5-list", data: exercisesHdc5},
 ];
 
 courseModules.forEach(module => {
@@ -34,6 +36,11 @@ courseModules.forEach(module => {
         
         const choosenEx = module.data.find(ex => ex.id === exerciseId);
         if (!choosenEx) return;
+
+        if (choosenEx.external) {
+            window.open(choosenEx.url, "_blank");
+            return;
+        }
 
         document.getElementById("modal-title").textContent = `Ex ${choosenEx.id} — ${choosenEx.title}`;
         document.getElementById("modal-desc").textContent = choosenEx.desc;

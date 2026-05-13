@@ -1,6 +1,7 @@
 export const exercisesHdc3 = [
     {
         id: 1,
+        external: false,
         title: "Bomba Relógio",
         desc: "Crie uma bomba relógio (usando somente código - para deixar claro!) cuja contagem regressiva vá de 30 a 0. No final da repetição escreva 'EXPLOSÃO'. ",
 
@@ -25,6 +26,7 @@ export const exercisesHdc3 = [
 
     {
         id: 2,
+        external: false,
         title: "Divisão",
         desc: "Crie um algoritmo que divida dois números, obrigando o usuário a digitar um valor maior que zero para o divisor (o segundo número).",
 
@@ -64,6 +66,7 @@ export const exercisesHdc3 = [
 
     {
         id: 3,
+        external: false,
         title: "Contagem regressiva",
         desc: "Escreva um algoritmo para imprimir os números de 1 (inclusive) a 10 (inclusive) em ordem decrescente.",
 
@@ -89,6 +92,7 @@ export const exercisesHdc3 = [
 
     {
         id: 4,
+        external: false,
         title: "",
         desc: "Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros entre 15 (inclusive) e 100 (inclusive).",
 
@@ -113,6 +117,7 @@ export const exercisesHdc3 = [
 
     {
         id: 5,
+        external: false,
         title: "Média de dois valores e seus intermediários", // botar um titulo melhorzinkkkkk
         desc: "Faça um algoritmo que calcule e escreva a média aritmética dos dois números inteiros informados pelo usuário e todos os números inteiros entre eles. Considere que o primeiro sempre será menor que o segundo. ",
 
@@ -152,6 +157,7 @@ export const exercisesHdc3 = [
 
     {
         id: 6,
+        external: false,
         title: "Média de alunos",
         desc: "Escreva um programa para ler 2 notas de um aluno, calcular e imprimir a média final. Considere que a nota de aprovação é 9,5. Logo após escrever a mensagem 'Calcular a média de outro aluno Sim/Não?' e solicitar um resposta. Se a resposta for 'S', o programa deve ser executado novamente, caso contrário deve ser encerrado exibindo a quantidade de alunos aprovados.",
 
@@ -210,6 +216,7 @@ export const exercisesHdc3 = [
 
     {
         id: 7,
+        external: false,
         title: "Média com validação de notas",
         desc: "Escreva um algoritmo para ler as notas de avaliações de um aluno, calcule e imprima a média (simples) desse aluno. Só devem ser aceitos valores válidos durante a leitura (0 a 10) para cada nota. São 6 notas ao total. Caso o valor informado para qualquer uma das notas esteja fora do limite estabelecido, deve ser solicitado um novo valor ao usuário.",
 
@@ -241,6 +248,7 @@ export const exercisesHdc3 = [
 
     {
         id: 8,
+        external: false,
         title: "Valores entre 1 e N",
         desc: "Ler um valor N e imprimir todos os valores inteiros entre 1 (inclusive) e N (inclusive). Considere que o N será sempre maior que ZERO. N  é um valor informado pelo usuário",
 
@@ -270,6 +278,7 @@ export const exercisesHdc3 = [
 
     {
         id: 9,
+        external: false,
         title: "10 preimiros inteiros maiores que 100",
         desc: "Escreva um algoritmo para imprimir os 10 primeiros números inteiros maiores que 100.",
 
@@ -292,6 +301,7 @@ export const exercisesHdc3 = [
 
     {
         id: 10,
+        external: false,
         title: "Valores entre 24 e 42",
         desc: "Escreva um programa em que o usuário informe 10 valores e escreva quantos desses valores lidos estão entre os números 24 e 42 (incluindo os valores 24 e 42) e quantos deles estão fora deste intervalo.",
 
@@ -330,6 +340,7 @@ export const exercisesHdc3 = [
 
     {
         id: 11,
+        external: false,
         title: "Tabuada de 1 a N",
         desc: "Escreva um programa para imprimir todas as tabuadas de 1 a N. N será informado pelo usuário. ",
 

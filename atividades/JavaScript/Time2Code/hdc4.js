@@ -1,6 +1,7 @@
 export const exercisesHdc4 = [
     {
         id: 1,
+        external: false,
         title: "Estudantes",
         desc: "Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar 'PARE' o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles.",
 
@@ -32,6 +33,7 @@ export const exercisesHdc4 = [
 
     {
         id: 2,
+        external: false,
         title: "Planetas",
         desc: "Crie uma array de planetas que inclua 'Terra', 'Marte', 'Plutão', 'Vênus', 'Júpiter', 'Saturno'  e, em seguida, peça ao usuário para digitar o nome de um planeta. Verifique se o planeta que o usuário informou está na array e informe ao usuário.",
 
@@ -66,6 +68,7 @@ export const exercisesHdc4 = [
 
     {
         id: 3,
+        external: false,
         title: "Compras",
         desc: "Vamos criar uma lista de compras. Crie uma array de frutas, exiba-a ao usuário e, em seguida, peça ao usuário para digitar o nome de uma das frutas. Caso a fruta esteja no array, remova-a e exiba a mensagem Fruta foi retirada da lista. Peça novamente para o usuário digitar o nome de uma fruta para ser removida. Sempre que o usuário procurar por uma fruta que não está no array exiba a mensagem Fruta indisponível no nosso mercado. Quando o array não possuir mais itens dentro de si, escreva Lista de compras finalizada.",
 

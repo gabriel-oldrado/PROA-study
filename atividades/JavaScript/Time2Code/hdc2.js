@@ -1,6 +1,7 @@
 export const exercisesHdc2 = [
     {
         id: 1,
+        external: false,
         title: "Maior de Dois",
         desc: "Escreva um programa em que o usuário informe dois números. O sistema deve informar o maior valor.",
         
@@ -34,6 +35,7 @@ export const exercisesHdc2 = [
 
     {
         id: 2,
+        external: false,
         title: "Positivo, Negativo ou Zero",
         desc: "Faça um programa que leia um valor informado pelo usuário e diga se o valor informado é positivo, negativo ou zero.",
         
@@ -66,6 +68,7 @@ export const exercisesHdc2 = [
 
     {
         id: 3,
+        external: false,
         title: "Maior de Três",
         desc: "Faça um programa para ler 3 valores (considere que não serão informados valores iguais) e escrever o maior deles. ",
         
@@ -100,6 +103,7 @@ export const exercisesHdc2 = [
 
     {
         id: 4,
+        external: false,
         title: "Soma dos 2 Maiores",
         desc: "Faça um programa que leia 3 valores informados pelo usuário (considere que não serão informados valores iguais) e escreva a soma dos 2 maiores.",
         
@@ -136,6 +140,7 @@ export const exercisesHdc2 = [
 
     {
         id: 5,
+        external: false,
         title: "Média de 6 Valores",
         desc: "Pegue 6 números informados pelo usuário e mostre a média aritmética entre eles.",
         
@@ -171,6 +176,7 @@ export const exercisesHdc2 = [
 
     {
         id: 6,
+        external: false,
         title: "Primeiro, Último e Maior",
         desc: "Pegue 4 valores com o usuário então mostre o primeiro, o último e o maior de todos.",
         
@@ -215,6 +221,7 @@ export const exercisesHdc2 = [
 
     {
         id: 7,
+        external: false,
         title: "Somatório com Condição",
         desc: "Pegue 6 valores informados pelo usuário, se for menor que 72 deve ser somado e no final mostrar todos os números e a soma.",
 
@@ -273,6 +280,7 @@ export const exercisesHdc2 = [
 
     {
         id: 8,
+        external: false,
         title: "Média Condicional",
         desc: "Escreva um programa que calcule a média de 4 valores, digitados pelo usuário, somente se os valores estiverem no intervalo >0 - < 10. Se a média for > 5 escreva 'Você passou no teste', senão 'tente novamente'.",
 
@@ -327,6 +335,7 @@ export const exercisesHdc2 = [
 
     {
         id: 9,
+        external: false,
         title: "Pode Votar?",
         desc: "Escreva um programa para ler o ano de nascimento de uma pessoa e escrever uma mensagem que diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que ela nasceu).",
 
@@ -356,6 +365,7 @@ export const exercisesHdc2 = [
 
     {
         id: 10,
+        external: false,
         title: "Peso ideal",
         desc: "Tendo como entrada a altura e o gênero designado ao nascer (1: feminino - 2: masculino) construa um programa que calcule seu peso ideal de acordo com as fórmulas: ",
 
@@ -410,6 +420,7 @@ export const exercisesHdc2 = [
 
     {
         id: 11,
+        external: false,
         title: "Micro Calculadora",
         desc: "Escreva um programa para ler 2 valores inteiros informados pelo usuário e uma operação (1. Adição, 2. Subtração, 3. Divisão, 4. Multiplicação) para calcular e escrever o resultado.",
 

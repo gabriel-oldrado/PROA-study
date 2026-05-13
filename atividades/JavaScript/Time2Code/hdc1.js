@@ -1,6 +1,7 @@
 export const exercisesHdc1 = [
     {
         id: 1,
+        external: false,
         title: "Carro Legal!",
         desc:"Escreva um programa que crie uma variável chamada 'nome_do_carro' e atribua-a um valor 'Fusca'. Exiba-a ao usuário.",
 
@@ -19,6 +20,7 @@ export const exercisesHdc1 = [
 
     {
         id: 2,
+        external: false,
         title: "Seu nome",
         desc: "Escreva um programa em que o usuário informe o seu nome e exiba a mensagem 'Olá, [NomeDoUsuario]'.",
 
@@ -47,6 +49,7 @@ export const exercisesHdc1 = [
     
     {
         id: 3,
+        external: false,
         title: "Nome e Idade",
         desc: "Escreva um programa em que o usuário informe o seu nome e em seguida o programa perguntará a idade do usuário. Agora o programa deve exibir a mensagem 'Olá, [NomeDoUsuario], sua idade é [idade]'.",
 
@@ -78,6 +81,7 @@ export const exercisesHdc1 = [
 
     {
         id: 4,
+        external: false,
         title: "Calcular Áreas",
         desc: "Considerando a figura abaixo, escreva um programa para cada forma que calcule e exiba em tela cada uma de suas respectivas áreas. O usuário irá informar os valores de cada variável.",
 
