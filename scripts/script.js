@@ -32,9 +32,7 @@ courseModules.forEach(module => {
         const btnClicked = event.target.closest("button[data-id]");
         if (!btnClicked) return;
 
-        const exerciseId = Number(btnClicked.dataset.id);
-        
-        const choosenEx = module.data.find(ex => ex.id === exerciseId);
+        const choosenEx = module.data.find(ex => String(ex.id) === btnClicked.dataset.id);
         if (!choosenEx) return;
 
         if (choosenEx.external) {

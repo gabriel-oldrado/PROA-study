@@ -1,9 +1,9 @@
 export const exercisesHdc5 = [
     {
-        id: 1 + " (Externo)",
+        id: 1,
         external: true,
         url: "atividades/JavaScript/Time2Code/hdc5/CaixaEletronico.html",
-        title: "Caixa Eletrônico",
+        title: "Caixa Eletrônico (Externo)",
         desc: "Melhore um sistema de banco existente adicionando segurança e novas funções.",
 
         html:`

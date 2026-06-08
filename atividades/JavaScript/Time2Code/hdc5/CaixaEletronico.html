@@ -9,10 +9,26 @@
 			color: #eee;
 			font-family: sans-serif;
 			display: flex;
+			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+			gap: 1rem;
 			min-height: 100vh;
 			margin: 0;
+		}
+
+		.btn-voltar {
+			padding: .6rem 1.2rem;
+			background: #eee;
+			color: #1a1a2e;
+			border: none;
+			border-radius: 6px;
+			font-size: .9rem;
+			cursor: pointer;
+		}
+
+		.btn-voltar:hover {
+			background: #ccc;
 		}
 	</style>
 	<script>
@@ -169,6 +185,7 @@
 	</script>
 </head>
 <body>
-	<p>Caixa Eletrônico — use os prompts do navegador para interagir.</p>
+	<p>Caixa Eletrônico.</p>
+	<button class="btn-voltar" onclick="window.location.href='../../../../index.html'">Voltar</button>
 </body>
 </html>
