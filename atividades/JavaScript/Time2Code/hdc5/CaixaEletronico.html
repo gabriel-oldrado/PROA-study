@@ -1,83 +1,174 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<title>Caixa Eletrônico</title>
 	<style>
 		body {
-			filter: blur(4px);
 			background: #1a1a2e;
+			color: #eee;
+			font-family: sans-serif;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			margin: 0;
 		}
 	</style>
-
-<head>
-
 	<script>
-		var saldo = 100.5; //Float
+		var nome = prompt("Por favor, informe o seu nome:");
+		alert("Olá " + nome + ", é um prazer ter você por aqui!");
+
+		var saldo = 100.5;
+		var senha = 3589;
+
+		var extrato = [
+			"R$ 45,00 - Compra no supermercado",
+			"R$ 120,00 - Depósito",
+			"R$ 32,50 - Compra em farmácia",
+			"R$ 200,00 - Depósito",
+			"R$ 18,90 - Compra em lanchonete"
+		];
+
+		function verificarSenha() {
+			var tentativa = parseInt(prompt("Digite a sua senha:"));
+			if (tentativa !== senha) {
+				return false;
+			}
+			return true;
+		}
+
+		function operacaoNaoAutorizada() {
+			alert("Operação não autorizada");
+			inicio();
+		}
+
 		function inicio() {
+			var escolha = parseInt(prompt(
+				"Selecione uma opção:\n" +
+				"1.) Saldo\n" +
+				"2.) Extrato\n" +
+				"3.) Saque\n" +
+				"4.) Depósito\n" +
+				"5.) Transferência\n" +
+				"6.) Sair"
+			));
 
-			var escolha = parseInt(prompt('Selecione uma opção 1.) Saldo 2.) Depósito 3.) Saque 4.) Sair'));
-
-			if (escolha === 1) {
-				ver_saldo();
-			} else if (escolha === 2) {
-				fazer_deposito();
-			} else if (escolha === 3) {
-				fazer_saque();
-			} else if (escolha === 4) {
-				sair();
-			} else {
-				erro();
+			switch (escolha) {
+				case 1:
+					ver_saldo();
+					break;
+				case 2:
+					ver_extrato();
+					break;
+				case 3:
+					fazer_saque();
+					break;
+				case 4:
+					fazer_deposito();
+					break;
+				case 5:
+					fazer_transferencia();
+					break;
+				case 6:
+					sair();
+					break;
+				default:
+					erro();
+					break;
 			}
 		}
 
 		function ver_saldo() {
-			alert('Seu saldo atual é: ' + saldo);
+			if (!verificarSenha()) {
+				ver_saldo();
+				return;
+			}
+			alert("Seu saldo atual é: R$ " + saldo.toFixed(2));
+			inicio();
+		}
+
+		function ver_extrato() {
+			if (!verificarSenha()) {
+				ver_extrato();
+				return;
+			}
+			alert("Extrato de " + nome + ":\n\n" + extrato.join("\n"));
+			inicio();
+		}
+
+		function fazer_saque() {
+			if (!verificarSenha()) {
+				fazer_saque();
+				return;
+			}
+
+			var saque = parseFloat(prompt("Qual o valor para saque?"));
+
+			if (isNaN(saque) || saque <= 0 || saque > saldo) {
+				operacaoNaoAutorizada();
+				return;
+			}
+
+			saldo -= saque;
+			alert("Saque realizado! Saldo atual: R$ " + saldo.toFixed(2));
 			inicio();
 		}
 
 		function fazer_deposito() {
-			var deposito = parseFloat(prompt('Qual o valor para depósito?'));
-			// Not a Number
-			if (isNaN(deposito) || deposito === '') {
-				alert('Por favor, informe um número:');
-				fazer_deposito();
-			} else {
-				saldo += deposito;
-				ver_saldo();
+			var deposito = parseFloat(prompt("Qual o valor para depósito?"));
+
+			if (isNaN(deposito) || deposito <= 0) {
+				operacaoNaoAutorizada();
+				return;
 			}
+
+			saldo += deposito;
+			alert("Depósito realizado! Saldo atual: R$ " + saldo.toFixed(2));
+			inicio();
 		}
 
-		function fazer_saque() {
-			var saque = parseFloat(prompt('Qual o valor para saque?'));
-			if (isNaN(saque) || saque === '') {
-				alert('Por favor, informe um número:');
-				fazer_saque();
-			} else {
-				saldo -= saque;
-				
-				ver_saldo();
+		function fazer_transferencia() {
+			if (!verificarSenha()) {
+				fazer_transferencia();
+				return;
 			}
+
+			var conta = prompt("Informe o número da conta para transferência:");
+
+			while (isNaN(conta) || conta.trim() === "") {
+				alert("Por favor, informe apenas números.");
+				conta = prompt("Informe o número da conta para transferência:");
+			}
+
+			var valor = parseFloat(prompt("Qual o valor da transferência?"));
+
+			if (isNaN(valor) || valor <= 0 || valor > saldo) {
+				operacaoNaoAutorizada();
+				return;
+			}
+
+			saldo -= valor;
+			alert("Transferência realizada para a conta " + conta + "! Saldo atual: R$ " + saldo.toFixed(2));
+			inicio();
 		}
 
 		function erro() {
-			alert('Por favor, informe um número entre 1 e 4');
+			alert(
+				"Por favor, informe um número entre 1 a 6:\n" +
+				"1.) Saldo  2.) Extrato  3.) Saque  4.) Depósito  5.) Transferência  6.) Sair"
+			);
 			inicio();
 		}
 
 		function sair() {
-			var confirma = confirm('Você deseja sair?');
-			if (confirma) {
-				window.close();
-			} else {
-				inicio();
-			}
+			alert(nome + ", foi um prazer ter você por aqui!");
 		}
 
-		
-		
 		inicio();
 	</script>
 </head>
-
 <body>
-
+	<p>Caixa Eletrônico — use os prompts do navegador para interagir.</p>
 </body>
-
 </html>
